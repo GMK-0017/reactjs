@@ -53,8 +53,8 @@ cursor: pointer;
 
 .cart-items{
 position: absolute;
-top: -5;
-right: 10;
+top: -5%;
+right: 10%;
 font-size: 15px;
 background-color: var(--color-3);
 color:var(--color-4);
@@ -240,9 +240,9 @@ top:5px;
 right: 5px;
 }
 
-/* .btn-fav:hover{
+.btn-fav:hover{
 color: var(--color-5);
-} */ 
+} 
 
 .active{
  color: var(--color-5); 
@@ -295,7 +295,7 @@ text-decoration: none;
   }
 
   .btn-close-cart {
-    font-size: 1.7rem;
+    font-size: 1rem;
     cursor: pointer;
     float: right;
   }
@@ -363,4 +363,8 @@ text-decoration: none;
       color:white;
       background-color: var(--color-2);
       font-weight: bold;
+  }
+  .clear-cart-image{
+    width: 380px;
+    height: 358px;
   }

@@ -1,12 +1,12 @@
-import Slider from './joeskitchen.js/Slider'
-import Navbar from './joeskitchen.js/Navbar'
-import MenuItem from './joeskitchen.js/MenuItem'
-import Products from './joeskitchen.js/Products'
+import Slider from './joeskitchen/Slider'
+import Navbar from './joeskitchen/Navbar'
+import MenuItem from './joeskitchen/MenuItem'
+import Products from './joeskitchen/Products'
 import { Route, Routes } from 'react-router-dom'
 import './App.css'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
-import Cart from './joeskitchen.js/Cart'
+import Cart from './joeskitchen/Cart'
 
 export default function App() {
   const [products,setProducts]=useState([])
@@ -51,9 +51,11 @@ const response = ()=>
           });
             setProducts(newFavourites)
           }
+
+         
 return (
     <div>
-        <Navbar setCartOpen={setCartOpen}/>
+        <Navbar setCartOpen={setCartOpen} CartDetails={CartDetails} />
         <Slider/>
         <MenuItem />
         <Routes>
@@ -61,7 +63,7 @@ return (
           <Route path="/products" element={<Products/>}></Route>
           <Route path="/products/:id" element={<Products products={products} isPending={isPending} CheckIsCart={CheckIsCart} handleFavourite={handleFavourite} AddtoCart={AddtoCart}/>}/>
         </Routes>
-        {CartOpen &&  <Cart CartDetails={CartDetails} setCartDetails={setCartDetails} />}
+        {CartOpen &&  <Cart CartDetails={CartDetails} setCartDetails={setCartDetails} setCartOpen={setCartOpen} />}
         
           
 </div>
