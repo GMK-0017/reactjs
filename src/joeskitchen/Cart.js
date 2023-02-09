@@ -33,8 +33,7 @@ function Cart({ CartDetails,setCartDetails ,setCartOpen }) {
           return<div key={e.ID} className="cart-item">
          <img src={`https://www.app.tutorjoes.in/img/food/${e.PIC}`} alt="{e.NAME}"  />
             <div>
-                
-              <h4>{e.NAME }</h4>
+                <h4>{e.NAME }</h4>
               <h5>Rs {e.AMT}</h5>
               <span className="remove-item" onClick={()=>handleRemove(e)}>Remove</span>
             </div>
@@ -42,14 +41,13 @@ function Cart({ CartDetails,setCartDetails ,setCartOpen }) {
               <i className="fa fa-plus" onClick={()=>increment(e)}></i>
               <p className="item-amount">
                 {e.QTY}
-               
-              </p>
+               </p>
               <i className="fa fa-minus" onClick={()=>decrement(e)}></i>
             </div>
           </div> 
         }) }
         <div className='cart-footer'>
-        <h4>{CartDetails.length===0?<img src={cart1} alt='cartimage' className='clear-cart-image'/>:CartDetails.reduce((total,cart)=>total+Number(cart.AMT*cart.QTY),0)}</h4>
+        <h4>{CartDetails.length===0?<img src={cart1} alt='cartimage' className='clear-cart-image'/>:"Total Amount  = "+CartDetails.reduce((total,cart)=>total+Number(cart.AMT*cart.QTY),0)}</h4>
         {CartDetails.length!==0 && ClearCartbtn && <button className="btn btn-clear-cart" onClick={()=>{setCartDetails([]);setClearCartbtn(false)}}>Clear Cart</button>}
 
         </div>
